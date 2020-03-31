@@ -1,0 +1,108 @@
+@import '../../../assets/styles/variables.scss';
+
+.ChekBox {
+   padding: 20px 10px;
+    .underline{
+        width: 100%;
+        height: 1px;
+        background:$grey4;
+    }
+    .ChekBox__title {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: $grey1;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .ChekBox__input {
+        display: flex;
+        flex-direction: column;
+
+        .wrap {
+            display: flex;
+            align-items: center;
+
+            input {
+                display: none;
+            }
+
+            label {
+                position: relative;
+                font-family: 'Gilroy';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                color: $grey1;
+                margin: 0 0 15px 35px;
+                cursor: pointer;
+               
+
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background: $grey5;
+                    left: - 35px;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 10px;
+                    height: 10px;
+                    background: $grey5;
+                    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+                    border-radius: 50%;
+                    left: -30px;
+                    top: 5px;
+                    z-index: 10;
+                }
+            }
+
+            input[type="checkbox"]:checked+label {
+                color: $green;
+
+                &::after {
+                    background: $green;
+                }
+                &::before {
+                    background: $white;
+                    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 575.98px) {
+    .ChekBox {
+        padding: 0 0;
+        .underline{
+            width: 80%;
+            height: 1px;
+            background:$grey4;
+        }
+        .ChekBox__title {
+            text-align: start;
+        }
+    }
+}
+
+@media (min-width: 767.98px) {
+   
+}
+
+@media (min-width: 991.98px) {
+
+    
+}
+
+@media (min-width: 1199.98px) {}

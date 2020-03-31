@@ -1,13 +1,23 @@
 @import '../../../../assets/styles/variables.scss';
 .wrap {
-    //border         : 1px solid red;
     display        : flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
     align-items    : center;
     height         : 100%;
     min-height: 70px;
+
+    .wrap__avatar{
+        border:1px solid $grey2;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+    }
     
     .wrap__nav {
+
+        display: none;
+
         ul {
             display     : flex;
             align-items : center;
@@ -27,9 +37,34 @@
                     color: $grey1;
                 }
             }
-
            
         }
     }
 
+}
+
+
+@media (min-width: 575.98px) {
+    .wrap {    
+        flex-direction: row;
+        .wrap__avatar{
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 767.98px) {
+
+}
+
+@media (min-width: 991.98px) {
+    .wrap {    
+        .wrap__nav {
+           display: block;
+        }
+    }
+}
+
+@media (min-width: 1199.98px) {
+    
 }

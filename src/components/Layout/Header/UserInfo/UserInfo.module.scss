@@ -1,7 +1,7 @@
 @import '../../../../assets/styles/variables.scss';
 
 .userInfo {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: flex-end;
     min-height: 70px;
@@ -9,7 +9,7 @@
     .userInfo__location {
         display: flex;
         flex-direction: column;
-        margin-right: 115px;
+      
 
         .userInfo__locationLabel {
             font-family: 'Gilroy';
@@ -55,6 +55,27 @@
             font-size: 14px;
             line-height: 16px;
             color:$grey1;
+        }
+    }
+}
+
+@media (min-width: 575.98px) {
+    
+    .userInfo {
+       display: flex;
+    
+        .userInfo__location {
+            margin-right: 60px;
+        }
+    }
+}
+
+@media (min-width: 991.98px) {
+    .userInfo {
+       
+    
+        .userInfo__location {
+            margin-right: 115px;
         }
     }
 }

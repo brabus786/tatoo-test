@@ -1,0 +1,39 @@
+@import '../../../assets/styles/variables.scss';
+
+.Pagination {
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    .Pagination__button {
+        margin: auto;
+        display: flex;
+
+        li {
+            width: 40px;
+            height: 40px;
+            border: 1px solid $grey5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $white;
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            text-transform: uppercase;
+            color:$grey1;
+            margin-right: 15px;
+            cursor: pointer;
+
+            &:last-child{
+                margin-right: 0;
+            }
+
+            
+        }
+        .active{
+            background: $green;
+            color: $white;
+        }
+    }
+}

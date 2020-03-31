@@ -1,0 +1,70 @@
+@import '../../assets/styles/variables.scss';
+
+.HorizontalBanner {
+    width: 100%;
+
+    min-height: 105px;
+    overflow: hidden;
+
+
+    display: flex;
+    align-items: center;
+
+
+    justify-content: flex-start;
+
+
+    position: relative;
+    background: $white;
+
+    .HorizontalBanner__text {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 22px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $red;
+        position: relative;
+        z-index: 10;
+    }
+
+    .HorizontalBanner__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        transform: scale(1.3);
+    }
+
+    
+}
+
+
+
+@media (min-width: 575.98px) {
+    .HorizontalBanner {
+        min-height: 170px;
+
+        .HorizontalBanner__img {
+            transform: scale(1);
+        }
+    }
+
+}
+
+@media (min-width: 767.98px) {
+    .HorizontalBanner {
+
+        justify-content: center;
+
+        .HorizontalBanner__img {
+            transform: scale(1);
+        }
+    }
+}
+
+@media (min-width: 991.98px) {}
+
+@media (min-width: 1199.98px) {}

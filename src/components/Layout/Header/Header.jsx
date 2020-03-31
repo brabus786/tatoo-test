@@ -11,10 +11,12 @@ const Header = () => {
         <header className={styles.header}>
             <Container>
                 <Row className={styles.header__wrap}>
-                    <Col xl='6'>
-                        <Navigation />
+                    <Col xl='6' lg='7' sm='4'>
+                        <Navigation
+                            avatar={avatar}
+                        />
                     </Col>
-                    <Col xl='6'>
+                    <Col xl='6' lg='5' sm='8'>
                         <UserInfo
                             location='Санкт-Петербург'
                             avatar={avatar}

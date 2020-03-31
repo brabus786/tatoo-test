@@ -1,0 +1,22 @@
+.SectionPagination {
+    padding-top: 0;
+
+    .title {
+        display: none;
+        font-family: "Gilroy";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        color: #2C2E3A;
+        margin-bottom: 25px;
+    }
+}
+@media (min-width: 575.98px) {
+    .SectionPagination {
+        padding-top:35px;
+    
+        .title {
+            display: block;
+        }
+    }
+}
