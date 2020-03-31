@@ -1,22 +1,9 @@
 @import '../../../assets/styles/variables.scss';
 
 .filter {
-
-    // .popup{
-    //     border:1px solid red;
-    //     position: fixed;
-    //     width: 100%;
-    //     height: 100vh;
-    //     top:0;
-    //     left: 0;
-    //     z-index: 30;
-    //     display: flex;
-    //     padding: 15px;
-    //     background: #000;
-    // }
+    background: #FCFCFC;
 
     .filter__row {
-        background: $white;
         display: flex;
         align-items: center;
 
@@ -25,7 +12,6 @@
             display: flex;
             align-items: center;
             padding-top: 20px;
-            //padding-bottom: 10px;
 
             label {
                 font-family: 'Gilroy';
@@ -43,7 +29,7 @@
                     margin-right: 30px;
                 }
 
-                &::before{
+                &::before {
                     position: absolute;
                     content: '';
                     width: 100%;
@@ -59,9 +45,9 @@
                 &:checked+label {
                     color: $grey1;
 
-                    &::before{
+                    &::before {
                         background: $red;
-    
+
                     }
                 }
             }
@@ -71,6 +57,7 @@
         .filter__wrapControl {
             border-top: 1px solid $grey3;
             border-bottom: 1px solid $grey3;
+            background: white;
         }
 
         .filter__control {
@@ -127,20 +114,21 @@
             min-height: 66px;
             border: 1px solid $grey3;
             border-radius: 4px 4px 4px 4px;
+            background: white;
 
             .filter__tabs {
                 padding-top: 0;
                 padding-bottom: 0;
 
-                
-            label {
-               height: auto;
-                &::before{
-                    display: none;
+                label {
+                    height: auto;
+
+                    &::before {
+                        display: none;
+                    }
                 }
             }
-        }
-            
+
 
             .filter__wrapControl {
                 border: none;
