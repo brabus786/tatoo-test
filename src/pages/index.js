@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 import Layout from '../components/Layout/Layout';
 import MainTemplate from '../templates/MainTemplate/MainTemplate';
@@ -12,130 +13,26 @@ import fireGreen from '../assets/img/fireGreen.svg';
 import Ellipse from '../assets/img/Ellipse.svg';
 import imgHorizontal from '../assets/img/imgHorizontal.png';
 
-const Home = () => {
-
+const Home = (props) => {
   const [isFilterOpen, setFilterOpen] = useState(false);
   const switchFilterState = () => {
     setFilterOpen(!isFilterOpen);
   }
 
-  const blokPayAttentionTo = [
-    {
-      price: 1500,
-      currency: 'ք',
-      sales: false,
-      img: [img2, img3, img4],
-      avatar: ava,
-      name: 'Дмитрий Останинкинов',
-      fire: fireGreen,
-      hot: Ellipse,
-    }, {
-      price: 1500,
-      currency: 'ք',
-      sales: true,
-      img: [img1],
-      avatar: ava,
-      name: 'Дмитрий Останинкинов',
-      fire: fireGreen,
-      hot: Ellipse,
-    }, {
-      price: 1500,
-      currency: 'ք',
-      sales: false,
-      img: [img2, img3, img4],
-      avatar: ava,
-      name: 'Дмитрий Останинкинов',
-      fire: fireGreen,
-      hot: Ellipse,
-    }, {
-      price: 1500,
-      currency: 'ք',
-      sales: false,
-      img: [img2, img3, img4],
-      avatar: ava,
-      name: 'Дмитрий Останинкинов',
-      fire: fireGreen,
-      hot: Ellipse,
-    }, {
-      price: 1500,
-      currency: 'ք',
-      sales: false,
-      img: [img2, img3, img4],
-      avatar: ava,
-      name: 'Дмитрий Останинкинов',
-      fire: fireGreen,
-      hot: Ellipse,
-    }, {
-      button: true,
-    },
-  ]
 
-  const topRating = [
-    {
+  let allMasters = props.users.map(userData => {
+    return {
       price: 1500,
       currency: 'ք',
       sales: false,
-      img: [img2, img3, img4],
-      avatar: ava,
-      name: 'Дмитрий Останинкинов',
+      img: [userData.avatar_url],
+      avatar: userData.avatar_url,
+      name: userData.login,
       fire: fireGreen,
-      hot: Ellipse,
-    }, {
-      price: 1500,
-      currency: 'ք',
-      sales: true,
-      img: [img1],
-      avatar: ava,
-      name: 'Дмитрий Останинкинов',
-      fire: fireGreen,
-      hot: Ellipse,
-    }, {
-      price: 1500,
-      currency: 'ք',
-      sales: true,
-      img: [img1],
-      avatar: ava,
-      name: 'Дмитрий Останинкинов',
-      fire: fireGreen,
-      hot: Ellipse,
-    }, {
-      price: 1500,
-      currency: 'ք',
-      sales: false,
-      img: [img2, img3, img4],
-      avatar: ava,
-      name: 'Дмитрий Останинкинов',
-      fire: fireGreen,
-      hot: Ellipse,
-    }, {
-      price: 1500,
-      currency: 'ք',
-      sales: false,
-      img: [img2, img3, img4],
-      avatar: ava,
-      name: 'Дмитрий Останинкинов',
-      fire: fireGreen,
-      hot: Ellipse,
-    }, {
-      button: true,
-    },
-  ]
-
-  let allMasters = [];
-  for (let i = 0; i < 20; i++) {
-    allMasters.push(
-      {
-        price: 1500,
-        currency: 'ք',
-        sales: false,
-        img: [img2, img3, img4],
-        avatar: ava,
-        name: 'Дмитрий Останинкинов',
-        fire: fireGreen,
-        hot: Ellipse,
-      }
-    );
-  };
+      hot: userData.site_admin,
+      profileUrl: userData.html_url
+    }
+  });
 
 
 
@@ -145,8 +42,6 @@ const Home = () => {
     >
 
       <MainTemplate
-        payAttentionTo={blokPayAttentionTo}
-        topRating={topRating}
         allMasters={allMasters}
         isFilterOpen={isFilterOpen}
         switchFilterState={switchFilterState}
@@ -154,6 +49,14 @@ const Home = () => {
       />
     </Layout>
   )
+}
+
+Home.getInitialProps = async () => {
+  const response = await axios.get('https://api.github.com/users');
+
+  return {
+    users: response.data
+  };
 }
 
 export default Home;

@@ -20,7 +20,7 @@ const MainTemplate = (props) => {
                 <HorizontalBanner img={props.bannerFooter} />
             </Container>
 
-            <Section 
+            {/* <Section 
                 background="#FCFCFC"
                 title='Обратите внимание'
                 banner={Banner1}
@@ -32,7 +32,7 @@ const MainTemplate = (props) => {
                 title='Лучший рейтинг'
                 banner={Banner1}
                 items={props.topRating}
-            />
+            /> */}
 
             <SectionPagination
                 items={props.allMasters}
